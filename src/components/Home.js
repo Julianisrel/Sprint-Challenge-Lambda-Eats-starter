@@ -1,18 +1,16 @@
-import react from "react";
+import React from "react";
 import {Link} from 'react-router-dom';
-
-
-
-
+import logo from './favicon.jpg';
+import splash from './Pizza.jpg';
 
 
 const Home = () => {
 
     return (
     <div>
-        <div className="header"><img src={logo} className="App-logo" alt="logo" /><h1>Hoo's Pizza!</h1> </div>
+        <div className="header"><img src={logo} className="App-logo" alt="logo" /><h1>Juls's Pizza!</h1> </div>
         <div className="splash">
-        <img src={splash} className="splash" alt="Hoo's Pizza" />
+        <img src={splash} className="splash" alt="Jul's Pizza" />
         </div><nav>
           <ul>
             <li>

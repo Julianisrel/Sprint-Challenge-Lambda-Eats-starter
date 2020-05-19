@@ -4,16 +4,27 @@ import {
   Route,
 } from "react-router-dom";
 import "./App.css";
+
+import "./App.css";
+ 
 import Home from "./components/Home";
 import OrderForm from "./components/OrderPizza";
 import Pizza from "./components/Pizza";
- 
-const App = () => {
+
+export default function App() {
   return (
-    <>
-      <h1>Lambda Eats</h1>
-      <p>gang</p>
-    </>
+      <div className="form">
+        <Switch>
+          <Route path="/Pizza">
+            <Pizza />
+          </Route>
+          <Route path="/OrderPizza">
+            <OrderForm />
+          </Route>
+          <Route path="/">
+            <Home />
+          </Route>
+        </Switch>
+      </div>
   );
-};
-export default App;
+}

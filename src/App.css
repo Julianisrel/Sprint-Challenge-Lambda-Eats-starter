@@ -14,14 +14,14 @@ h1, .header {
 }
 
 h1:after {
-	content: "Hoo's Pizza";
+	content: "Jul's Pizza";
 	position: absolute; left: 10px; top: 5px;
-	color: rgb(255, 225, 0); 
+	color:#FFD700
 }
 
 .App {
   text-align: center;
-  background-color: maroon;
+  background-color: #20B2AA
 }
 
 .App-logo {
@@ -79,5 +79,5 @@ form {
 }
 
 label {
-  background-color: orangered;
+  background-color: orangd;
 }

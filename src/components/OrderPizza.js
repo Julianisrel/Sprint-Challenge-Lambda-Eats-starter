@@ -1,11 +1,11 @@
 import React, {useState, useEffect} from "react";
 import Pizza from "./Pizza";
 import {Route, Link} from "react-router-dom";
-// import Home from "./Home";
+
 import * as yup from "yup";
 import axios from "axios";
 import logo from './favicon.jpg';
-// import splash from './Pizza.jpg';
+
 
 const formSchema = yup.object().shape({
     name: yup
@@ -47,7 +47,7 @@ const OrderForm = () => {
         comments: "",
     })
 
-    // THE SUBMIT BUTTON DISABLED FUNCTION
+    //  SUBMIT BUTTON DISABLED FUNCTION
     const [buttonDisabled, setButtonDisabled] = useState(true);
         useEffect(() => {
             formSchema
@@ -111,7 +111,7 @@ const OrderForm = () => {
 return (
         <div className="container">
         {/* <Home /> */}
-         <div className="header"><img src={logo} className="App-logo" alt="logo" /><h1>Hoo's Pizza!</h1> </div>
+         <div className="header"><img src={logo} className="App-logo" alt="logo" /><h1>Juls's Pizza!</h1> </div>
         <div className="splash">
        
         </div>
