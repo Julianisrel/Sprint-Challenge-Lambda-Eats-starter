@@ -9,8 +9,8 @@ h1, .header {
 	letter-spacing: 10px;
 	color: rgb(255, 0, 0);
   display: inline-flex;
-  background-color: #282c34;
-   align-items: flex-start; 
+  background-color: 
+   align-items flex-start; 
 }
 
 h1:after {
@@ -65,7 +65,7 @@ form {
   color: white;
   background: url("./components/Pizza.jpg");
   padding: 10px;
-  background-color: maroon;
+  background-color: #20B2AA;
 }
 
 .header {
@@ -75,9 +75,9 @@ form {
 }
 
 .container {
-  background-color: maroon;
+  background-color:#20B2AA;
 }
 
 label {
-  background-color: orangd;
+  background-color: oranged;
 }
