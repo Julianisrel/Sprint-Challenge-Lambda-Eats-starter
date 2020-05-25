@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from "react";
 import Pizza from "./Pizza";
 import {Route, Link} from "react-router-dom";
-
+// import Home from "./components/Home";
 import * as yup from "yup";
 import axios from "axios";
 import logo from './favicon.jpg';
@@ -10,6 +10,7 @@ import logo from './favicon.jpg';
 const formSchema = yup.object().shape({
     name: yup
         .string()
+        .min(2)
         .required("Name is a required field"),
     pSize: yup
         .string()
@@ -33,6 +34,7 @@ const formSchema = yup.object().shape({
 });
 
 const OrderForm = () => {
+    const [data, setData] = useState({})
   //FORM STATES  
     const [pState, setPstate] = useState({
         // id: Math.random(),
@@ -94,21 +96,24 @@ const OrderForm = () => {
     const inputChange = e => {
         e.persist();
         validate(e);
-        let value = 
-        e.target.type === "checkbox" ? e.target.checkbox : e.target.value;
+        let value = e.target.type === "checkbox" ? e.target.checked : e.target.value;
         setPstate({ ...pState, [e.target.name]: value });
-        };
+    };
     
 // FORMSUBMIT FUNCTION
     const submitPizza = e => {
         e.preventDefault();
         console.log("form submitted!");
         axios
-            .post('https://reqres.in/api/users', pState)
-            .then( response => console.log(response))
-            .catch( err => console.log(err));
-        };
-return (
+        .post('https://reqres.in/api/users', pState)
+        .then( response => {
+            console.log(response)
+            setData(response.data)
+        })
+        .catch( err => console.log(err));
+    };
+
+    return (
         <div className="container">
         {/* <Home /> */}
          <div className="header"><img src={logo} className="App-logo" alt="logo" /><h1>Juls's Pizza!</h1> </div>
@@ -135,7 +140,7 @@ return (
                         id="pSize"
                         value={pState.pSize} 
                         onChange={inputChange}
-                        >  
+                    >  
                         <option></option>
                         <option value="Tiny">Piccolo (Tiny 4")</option>
                         <option value="Small">Minuscolo (small 8")</option>
@@ -234,6 +239,9 @@ return (
             <Route path="/Pizza">
                 <Pizza />
                     </Route>
+        </div>
+        <div>
+            {data ? `Hi ${data.name}, You got a ${data.pCrust} ${data.pSause} ${data.pSize}.` : null}
         </div>
     </div>
 )};
